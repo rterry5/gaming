@@ -1,2 +1,9 @@
-<app-navigation></app-navigation>
-<app-search></app-search>
+<div class="dashboard">
+  <div class="dashboard__header">
+    <app-search [searchResults]="games"></app-search>
+    <app-navigation></app-navigation>
+  </div>
+  <div class="dashboard__cards">
+    <app-card [game]="games"></app-card>
+  </div>
+</div>

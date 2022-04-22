@@ -1,0 +1,15 @@
+.dashboard {
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  flex-wrap: wrap;
+
+  &__header {
+    display: flex;
+    width: 100%;
+  }
+
+  &__cards {
+    width: 100%;
+  }
+}

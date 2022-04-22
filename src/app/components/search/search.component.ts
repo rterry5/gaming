@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { GamesService } from 'src/app/services/games.service';
 
 @Component({
@@ -8,9 +8,10 @@ import { GamesService } from 'src/app/services/games.service';
 })
 export class SearchComponent implements OnInit {
 
-  searchTerm: string;
+  @Input()
+  searchResults: any;
 
-  games: [];
+  searchTerm: string;
 
   constructor(private gamesService: GamesService) { }
 
@@ -19,9 +20,10 @@ export class SearchComponent implements OnInit {
 
   searchGames() {
     this.gamesService.searchGames(this.searchTerm).subscribe(data => {
-      this.games = data.results;
-      console.log(this.searchTerm)
+      this.searchResults = data.results;
+      console.log(this.searchResults)
     })
   }
+
 
 }

@@ -6,6 +6,15 @@ $dark: #0e141b;
 $white: #ffffff;
 $pink: #df1f4f;
 
+$midnight: #0c070f;
+$purple: #423452;
+$olive: #564a05;
+$brown: #4d2e0f;
+$red: #b93c39;
+$light-purple: #62609f;
+$yellow: #ceb122;
+$gray: #c6c5cb;
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap');
 
 * {
@@ -16,6 +25,7 @@ body {
   background-color: $primary;
   margin: 0;
   color: $white;
+  font-family: sans-serif;
 }
 
 h1, h2, h3, h4 {
@@ -28,6 +38,7 @@ p {
 
 a {
   text-decoration: none;
+  color: $white;
 }
 
 li {
