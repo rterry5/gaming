@@ -26,8 +26,8 @@ export class GamesService {
     return this.http.get<any>(`https://api.rawg.io/api/genres?key=81de34a78d4a4408864ded61575c4214`);
   }
 
-  searchGames() {
-    return this.http.get<any>(`https://api.rawg.io/api/games?search=zelda&key=81de34a78d4a4408864ded61575c4214`);
+  searchGames(searchTerm: string) {
+    return this.http.get<any>(`https://api.rawg.io/api/games?search=${searchTerm}&key=81de34a78d4a4408864ded61575c4214`);
   }
 
 }

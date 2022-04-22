@@ -17,20 +17,20 @@ export class DashboardComponent implements OnInit {
   constructor(private gameService: GamesService) { }
 
   ngOnInit(): void {
-    this.searchGames();
+
   }
 
-  getGames() {
-    this.gameService.getGames().subscribe((data) => {
-      this.games = data;
-      console.log(data)
-    });
-  }
+  // getGames() {
+  //   this.gameService.getGames().subscribe((data) => {
+  //     this.games = data;
+  //     console.log(data)
+  //   });
+  // }
 
-  searchGames() {
-    this.gameService.searchGames().subscribe((data) => {
-      this.searchedGames = data;
-    })
-  }
+  // searchGames() {
+  //   this.gameService.searchGames().subscribe((data) => {
+  //     this.searchedGames = data;
+  //   })
+  // }
 
 }

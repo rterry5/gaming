@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+$primary: #191e2a;
+$secondary: #222939;
+$dark: #0e141b;
+$white: #ffffff;
+$pink: #df1f4f;
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary;
+  margin: 0;
+  color: $white;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  font-family: 'Open Sans', sans-serif;
+}
+app-dashboard {
+  display: flex;
+}
