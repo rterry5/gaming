@@ -1,33 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
-
-$primary: #191e2a;
-$secondary: #222939;
-$dark: #0e141b;
-$white: #ffffff;
-$pink: #df1f4f;
-
-$midnight: #0c070f;
-$purple: #423452;
-$olive: #564a05;
-$brown: #4d2e0f;
-$red: #b93c39;
-$light-purple: #62609f;
-$yellow: #ceb122;
-$gray: #c6c5cb;
-
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:wght@100;300;400;700?family=Lato&family=Open+Sans&display=swap');
+@import "src/mixins/settings.scss";
+@import "src/mixins/colors.scss";
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  background-color: $primary;
+body, html {
+  background-color: $purple;
   margin: 0;
   color: $white;
   font-family: sans-serif;
-  background: #413451;
-  background: linear-gradient(135deg, #413451 0%, #0b070e 100%);
+  background: $purple;
+  background: linear-gradient(135deg, $purple 0%, $dark 100%);
 }
 
 h1, h2, h3, h4 {
@@ -35,11 +20,13 @@ h1, h2, h3, h4 {
 }
 
 h2, h3 {
-  margin: 0;
+  margin: 0;font-weight: 600;
 }
 
 p {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  font-size: 0.875rem;
 }
 
 a {
@@ -54,6 +41,9 @@ li {
 button {
   font-family: 'Open Sans', sans-serif;
 }
+
 app-dashboard {
   display: flex;
+  justify-content: center;
+  margin: 1rem;
 }

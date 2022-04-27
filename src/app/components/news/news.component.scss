@@ -1,3 +1,5 @@
+@import "src/mixins/settings.scss";
+
 .news {
   &__main-article {
     display: flex;
@@ -6,7 +8,7 @@
   }
 
   &__main-content {
-    margin: 1rem;
+    margin: 2rem;
   }
 
   &__main-title {
@@ -20,7 +22,7 @@
   &__main-publish-date {
     font-size: 12px;
     border-radius: 12px;
-    background: #df1f4f;
+    background: $pink;
     padding: 0.25rem .5rem;
   }
 
@@ -33,6 +35,11 @@
     margin: 1rem 0;
     background-color: rgba(98, 96, 159, 0.25);
     border-radius: 24px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: flex-end;
   }
 
 

@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
-import { GamesService } from './services/games.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { GamesService } from 'src/app/services/games.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-your-games',
+  templateUrl: './your-games.component.html',
+  styleUrls: ['./your-games.component.scss']
 })
-export class AppComponent {
+export class YourGamesComponent implements OnInit {
   title = 'gaming';
 
   games: [];

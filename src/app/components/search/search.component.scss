@@ -1,11 +1,13 @@
+@import "src/mixins/settings.scss";
+
 .search {
-  height: 100%;
+  margin-bottom: 2rem;
 
   &__input {
     height: 100%;
     border-radius: 2rem;
     width: 250px;
-    padding: 0 1rem;
+    padding: 1rem;
     outline: none;
     border: none;
   }

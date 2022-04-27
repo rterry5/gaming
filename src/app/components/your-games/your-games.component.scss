@@ -1,0 +1,14 @@
+.your-games {
+
+    &__heading {
+        margin: 0 0 2rem;
+    }
+    
+    &__cards {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1440px;
+        justify-content: space-between;
+    }
+}

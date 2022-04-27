@@ -1,0 +1,7 @@
+<div class="your-games">
+    <h2 class="your-games__heading">Search Games</h2>
+</div>
+<app-search (termSearched)="searchedGames($event)"></app-search>
+<div class="your-games__container">
+    <app-card [gameSearched]="games" class="your-games__cards"></app-card>
+</div>

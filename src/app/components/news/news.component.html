@@ -10,6 +10,7 @@
   </div>
 </div>
 <div class="news__secondary-articles">
-  <h3 class="news__secondary-heading">More News</h3>
+  <h2 class="news__secondary-heading">More News</h2>
   <p class="news__secondary-title" *ngFor="let article of articles.slice(1); let i = index">{{article.title}} - {{article.publish_date | date}}</p>
+  <a href="/more-news" class="news__link">More News</a>
 </div>

@@ -1,11 +1,10 @@
 <div class="dashboard">
-  <div class="dashboard__header">
-    <app-search (termSearched)="searchedGames($event)"></app-search>
-    <app-navigation></app-navigation>
+  <div class="dashboard__container">
+    <app-news class="dashboard__news"></app-news>
   </div>
   <div class="dashboard__container">
     <app-new-releases class="dashboard__new-releases"></app-new-releases>
-    <app-news class="dashboard__news"></app-news>
+    <app-your-games class="dashboard__your-games"></app-your-games>
   </div>
-  <app-card [gameSearched]="games" class="dashboard__cards"></app-card>
+  <!-- <app-card [gameSearched]="games" class="dashboard__cards"></app-card> -->
 </div>

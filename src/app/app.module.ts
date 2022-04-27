@@ -14,6 +14,8 @@ import { GamesService } from './services/games.service';
 import { NewsComponent } from './components/news/news.component';
 import { DatePipe } from '@angular/common';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
+import { MoreNewsComponent } from './components/pages/more-news/more-news.component';
+import { YourGamesComponent } from './components/your-games/your-games.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NewReleasesComponent } from './components/new-releases/new-releases.com
     CardComponent,
     GameDetailsComponent,
     NewsComponent,
-    NewReleasesComponent
+    NewReleasesComponent,
+    MoreNewsComponent,
+    YourGamesComponent
   ],
   imports: [
     BrowserModule,

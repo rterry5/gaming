@@ -5,12 +5,17 @@ import { CardComponent } from './components/card/card.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MoreNewsComponent } from './components/pages/more-news/more-news.component';
 
 const routes: Routes = [
   {
-    path: '' ,
-    redirectTo: 'AppComponent',
-    pathMatch: 'full'
+    path: '',
+    component: DashboardComponent,
+    children: []
+  },
+  {
+    path: 'more-news',
+    component: MoreNewsComponent
   },
   {
     path: 'game/:id',
@@ -18,7 +23,7 @@ const routes: Routes = [
     resolve: {
       id: GameResolverService
     }
-  }
+  },
 ];
 
 @NgModule({

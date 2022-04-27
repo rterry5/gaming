@@ -1,5 +1,19 @@
+@import "src/mixins/settings.scss";
+
 .nav {
   display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  justify-content: space-between;
+
+  &__logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  &__link-container {
+    display: flex;
+  }
 
   &__link {
     padding: 1rem;

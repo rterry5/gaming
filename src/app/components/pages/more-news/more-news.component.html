@@ -1,0 +1,5 @@
+<div class="more-news" *ngIf="moreArticles">
+    <div class="more-news__content" *ngFor="let article of moreArticles">
+        <h2 class="more-news__title">{{article.title}}</h2>
+    </div>
+</div>

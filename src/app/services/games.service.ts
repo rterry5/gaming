@@ -35,6 +35,10 @@ export class GamesService {
     return this.http.get<any>('https://www.gamespot.com/api/articles/?api_key=5b8e9952ee3272b4d3b21049f994993e69367932&format=json&sort=publish_date:desc&limit=5');
   }
 
+  getAllNewsArticles() {
+    return this.http.get<any>('https://www.gamespot.com/api/articles/?api_key=5b8e9952ee3272b4d3b21049f994993e69367932&format=json&sort=publish_date:desc');
+  }
+
   getNewReleases() {
     return this.http.get<any>(`https://www.gamespot.com/api/releases/?api_key=5b8e9952ee3272b4d3b21049f994993e69367932&format=json&sort=release_date:desc&limit=15
     `)
