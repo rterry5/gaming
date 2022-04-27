@@ -1,3 +1,3 @@
  <div class="search">
-     <input type="text" class="search__input" placeholder="Search" [(ngModel)]="searchTerm" (keyup)="searchGames()">
+     <input #search type="text" class="search__input" placeholder="Search" [(ngModel)]="keyword" (keyup)="emitSearchTerm(keyword)">
 </div>

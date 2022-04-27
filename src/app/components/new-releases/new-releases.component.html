@@ -1,0 +1,6 @@
+<div class="new-releases" *ngIf="games">
+  <h3 class="new-releases__heading">New Releases</h3>
+  <div class="new-releases__card" *ngFor="let game of games">
+    <p class="new-releases__title">{{game.name}}</p>
+  </div>
+</div>

@@ -1,5 +1,7 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { HtmlParser } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +23,20 @@ export class GamesService {
     }
   };
 
-
-  getGames() {
-    return this.http.get<any>(`https://api.rawg.io/api/genres?key=81de34a78d4a4408864ded61575c4214`);
-  }
-
   searchGames(searchTerm: string) {
     return this.http.get<any>(`https://api.rawg.io/api/games?search=${searchTerm}&key=81de34a78d4a4408864ded61575c4214`);
   }
 
+  getGamesById(id: number) {
+    return this.http.get<any>(`https://api.rawg.io/api/games/${id}?key=81de34a78d4a4408864ded61575c4214`);
+  }
+
+  getNewsArticle() {
+    return this.http.get<any>('http://www.gamespot.com/api/articles/?api_key=5b8e9952ee3272b4d3b21049f994993e69367932&format=json&sort=publish_date:desc&limit=5');
+  }
+
+  getNewReleases() {
+    return this.http.get<any>(`http://www.gamespot.com/api/releases/?api_key=5b8e9952ee3272b4d3b21049f994993e69367932&format=json&sort=release_date:desc&limit=15
+    `)
+  }
 }

@@ -1,0 +1,15 @@
+<div class="news" *ngIf="articles">
+  <div class="news__main-article">
+    <img src="{{articles[0].image.original}}" alt="" class="news__img">
+    <div class="news__main-content">
+      <h2 class="news__main-title">{{articles[0].title}}</h2>
+      <p class="news__main-author">By {{articles[0].authors}}</p>
+      <span class="news__main-publish-date">{{articles[0].publish_date | date}}</span>
+      <p class="news__main-description">{{articles[0].lede}}</p>
+    </div>
+  </div>
+</div>
+<div class="news__secondary-articles">
+  <h3 class="news__secondary-heading">More News</h3>
+  <p class="news__secondary-title" *ngFor="let article of articles.slice(1); let i = index">{{article.title}} - {{article.publish_date | date}}</p>
+</div>

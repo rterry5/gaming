@@ -1,0 +1,44 @@
+.news {
+  &__main-article {
+    display: flex;
+    border-radius: 24px;
+    background-color: rgba(66, 52, 82, 0.25);
+  }
+
+  &__main-content {
+    margin: 1rem;
+  }
+
+  &__main-title {
+
+  }
+
+  &__main-author {
+    font-size: 14px;
+  }
+
+  &__main-publish-date {
+    font-size: 12px;
+    border-radius: 12px;
+    background: #df1f4f;
+    padding: 0.25rem .5rem;
+  }
+
+  &__main-description {
+    white-space: pre-wrap;
+  }
+
+  &__secondary-articles {
+    padding: 2rem;
+    margin: 1rem 0;
+    background-color: rgba(98, 96, 159, 0.25);
+    border-radius: 24px;
+  }
+
+
+  &__img {
+    max-height: 100%;
+    max-width: 50%;
+    border-radius: 24px 0 0 24px;
+  }
+}

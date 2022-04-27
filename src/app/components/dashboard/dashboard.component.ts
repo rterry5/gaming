@@ -1,6 +1,6 @@
 import { CardComponent } from './../card/card.component';
 import { GamesService } from './../../services/games.service';
-import { Component, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,17 +9,28 @@ import { Component, OnInit, Output, ViewChild } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  @ViewChild(CardComponent) cardComponent: CardComponent;
-
   games: [];
 
-  constructor() { }
+  keyword: string;
+
+  id: number;
+
+  constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
 
   }
 
-  ngAfterViewInit() {
-    this.games = this.cardComponent.game;
+  searchedGames(keyword: string) {
+    this.keyword = keyword;
+    this.gamesService.searchGames(this.keyword).subscribe(data => {
+      this.games = data.results;
+    })
+  }
+
+  getGamesById(id: number) {
+    this.games.forEach(game => {
+      console.log(game)
+    })
   }
 }

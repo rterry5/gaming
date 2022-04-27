@@ -8,22 +8,18 @@ import { GamesService } from 'src/app/services/games.service';
 })
 export class SearchComponent implements OnInit {
 
-  @Input()
-  searchResults: any;
+  @Output()
+  termSearched: EventEmitter<any> = new EventEmitter<any>();
 
-  searchTerm: string;
+  keyword: string;
 
-  constructor(private gamesService: GamesService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  searchGames() {
-    this.gamesService.searchGames(this.searchTerm).subscribe(data => {
-      this.searchResults = data.results;
-      console.log(this.searchResults)
-    })
+  emitSearchTerm(term: string) {
+    this.termSearched.emit(term);
+    this.keyword = term;
   }
-
-
 }

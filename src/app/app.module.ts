@@ -1,6 +1,7 @@
+import { GameResolverService } from './routing/resolvers/game-resolver.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -8,6 +9,11 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
+import { GameDetailsComponent } from './components/game-details/game-details.component';
+import { GamesService } from './services/games.service';
+import { NewsComponent } from './components/news/news.component';
+import { DatePipe } from '@angular/common';
+import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 
 @NgModule({
   declarations: [
@@ -15,15 +21,18 @@ import { CardComponent } from './components/card/card.component';
     DashboardComponent,
     NavigationComponent,
     SearchComponent,
-    CardComponent
+    CardComponent,
+    GameDetailsComponent,
+    NewsComponent,
+    NewReleasesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

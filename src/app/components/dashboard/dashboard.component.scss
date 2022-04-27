@@ -1,15 +1,38 @@
 .dashboard {
   display: flex;
   width: 100%;
-  padding: 1rem;
+  // padding: 1rem;
   flex-wrap: wrap;
 
   &__header {
     display: flex;
+    justify-content: space-between;
     width: 100%;
+    padding: 1rem;
+    background-color: rgba(12, 7, 15, 0.25);
+  }
+
+  &__container {
+    display: flex;
+    margin: 1rem;
+  }
+
+  &__new-releases {
+    margin-right: 1rem;
+    display: flex;
+  }
+
+  &__news {
+    max-width: 1440px;
+    width: 100%;
+    border-radius: 24px;
   }
 
   &__cards {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4rem 1rem 1rem 0;
+    justify-content: center;
   }
 }
