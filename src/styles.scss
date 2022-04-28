@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Roboto:wght@100;300;400;700?family=Lato&family=Open+Sans&display=swap');
 @import "src/mixins/settings.scss";
 @import "src/mixins/colors.scss";
 
@@ -11,8 +10,10 @@ body, html {
   margin: 0;
   color: $white;
   font-family: sans-serif;
-  background: $purple;
-  background: linear-gradient(135deg, $purple 0%, $dark 100%);
+  // background: $purple;
+  // background: linear-gradient(135deg, $purple 0%, $dark 100%);
+  background: rgb(14,20,27);
+  background: linear-gradient(135deg, rgba(14,20,27,1) 0%, rgba(66,52,82,1) 50%, rgba(98,96,159,1) 100%);
 }
 
 h1, h2, h3, h4 {
@@ -23,7 +24,7 @@ h2, h3 {
   margin: 0;font-weight: 600;
 }
 
-p {
+p, span {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
   font-size: 0.875rem;

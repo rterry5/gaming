@@ -11,6 +11,8 @@ export class YourGamesComponent implements OnInit {
 
   games: [];
 
+  genres: [];
+
   keyword: string;
 
   id: number;
