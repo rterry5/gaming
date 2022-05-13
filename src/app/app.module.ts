@@ -16,6 +16,7 @@ import { DatePipe } from '@angular/common';
 import { NewReleasesComponent } from './components/new-releases/new-releases.component';
 import { MoreNewsComponent } from './components/pages/more-news/more-news.component';
 import { YourGamesComponent } from './components/your-games/your-games.component';
+import { FavoritesComponent } from './components/pages/favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { YourGamesComponent } from './components/your-games/your-games.component
     NewsComponent,
     NewReleasesComponent,
     MoreNewsComponent,
-    YourGamesComponent
+    YourGamesComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

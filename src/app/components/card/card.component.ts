@@ -11,13 +11,13 @@ export class CardComponent implements OnInit {
   @Input()
   gameSearched: any = [];
 
+  @Input()
+  favorites: any = [];
+
   key: string = "favorites";
 
   myItem: any;
 
-  favorites: any = [];
-
-  @Input()
   favoriteClicked: boolean;
 
   gameFavorited: any;

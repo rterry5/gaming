@@ -1,3 +1,4 @@
+import { FavoritesComponent } from './components/pages/favorites/favorites.component';
 import { AppComponent } from './app.component';
 import { GameDetailsComponent } from './components/pages/game-details/game-details.component';
 import { GameResolverService } from './routing/resolvers/game-resolver.service';
@@ -23,6 +24,10 @@ const routes: Routes = [
     resolve: {
       id: GameResolverService
     }
+  },
+  {
+    path: 'favorites',
+    component: FavoritesComponent
   },
 ];
 
