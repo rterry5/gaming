@@ -1,16 +1,18 @@
-<a href="game/{{game.id}}" *ngFor="let game of gameSearched" class="card">
-  <div class="card__content">
-    <svg class="card__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17.867 3.493l4.133 3.444v5.127l-10 8.333-10-8.334v-5.126l4.133-3.444 5.867 3.911 5.867-3.911zm.133-2.493l-6 4-6-4-6 5v7l12 10 12-10v-7l-6-5z"/></svg>
-    <!-- <svg class="card__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"/></svg> -->
-    <div style="background-image: url({{game.background_image}})" alt="" class="card__img">
-    </div>
-    <div class="card__container">
-      <p class="card__text">{{game.name}}</p>
-      <div class="card__genres">
-        <span class="card__genre card__genre--{{game.genres[i].name}}" *ngFor="let genres of game.genres; let i = index">
-          {{game.genres[i].name}}
-        </span>
+<div class="card" *ngFor="let game of gameSearched; let i = index">
+  <svg *ngIf="!favoriteClicked" (click)="addGameToFavorites(game.id)" class="card__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17.867 3.493l4.133 3.444v5.127l-10 8.333-10-8.334v-5.126l4.133-3.444 5.867 3.911 5.867-3.911zm.133-2.493l-6 4-6-4-6 5v7l12 10 12-10v-7l-6-5z"/></svg>
+  <svg *ngIf="favoriteClicked" (click)="removeGameFromFavorites(game.id)" class="card__svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"/></svg>
+  <a href="game/{{game.id}}">
+    <div class="card__content">
+      <div style="background-image: url({{game.background_image}})" alt="" class="card__img">
+      </div>
+      <div class="card__container">
+        <p class="card__text">{{game.name}}</p>
+        <div class="card__genres">
+          <span class="card__genre card__genre--{{game.genres[i].name}}" *ngFor="let genres of game.genres; let i = index">
+            {{game.genres[i].name}}
+          </span>
+        </div>
       </div>
     </div>
-  </div>
-</a>
+  </a>
+</div>

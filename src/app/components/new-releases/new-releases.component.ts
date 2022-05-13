@@ -19,7 +19,6 @@ export class NewReleasesComponent implements OnInit {
   getNewReleases() {
     this.gamesService.getNewReleases().subscribe(data => {
       this.games = data.results;
-      console.log(data)
     })
   }
 

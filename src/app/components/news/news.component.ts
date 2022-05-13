@@ -19,7 +19,6 @@ export class NewsComponent implements OnInit {
   getNewsArticle() {
     this.gamesService.getNewsArticle().subscribe(data => {
       this.articles = data.results;
-      console.log(data)
     })
   }
 
