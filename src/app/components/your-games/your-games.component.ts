@@ -9,7 +9,7 @@ import { GamesService } from 'src/app/services/games.service';
 export class YourGamesComponent implements OnInit {
   title = 'gaming';
 
-  games: [];
+  games: any = [];
 
   genres: [];
 
@@ -25,14 +25,9 @@ export class YourGamesComponent implements OnInit {
 
   searchedGames(keyword: string) {
     this.keyword = keyword;
+
     this.gamesService.searchGames(this.keyword).subscribe(data => {
       this.games = data.results;
-    })
-  }
-
-  getGamesById(id: number) {
-    this.games.forEach(game => {
-      console.log(game)
-    })
+    });
   }
 }

@@ -14,6 +14,14 @@ export class CardComponent implements OnInit {
   @Input()
   favorites: any = [];
 
+  @Input()
+  gameId: number;
+
+  @Input()
+  gameDescription: any;
+
+  gameDetails: any;
+
   key: string = "favorites";
 
   myItem: any;
@@ -22,9 +30,8 @@ export class CardComponent implements OnInit {
 
   gameFavorited: any;
 
-  gameId: number;
 
-  constructor() { }
+  constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
     this.getFavorites();
@@ -47,9 +54,11 @@ export class CardComponent implements OnInit {
   addGameToFavorites(id: number) {
     let game = this.gameSearched.find((game: any) => game.id === id);
     this.gameFavorited = game;
+    this.gameId = id;
     this.favorites.push(this.gameFavorited);
     localStorage.setItem(this.key, JSON.stringify(this.favorites));
-    this.toggleHeart(id);
+    this.toggleHeart(this.gameId);
+    this.getGameById(this.gameId);
     this.saveFavorites();
   }
 
@@ -65,8 +74,14 @@ export class CardComponent implements OnInit {
 
   toggleHeart(id: number) {
     // let game = this.favorites.find((game: any) => game.id === id)
-    console.log(this.gameFavorited.id)
+    // console.log(this.gameFavorited.id)
+    // this.favoriteClicked = !this.favoriteClicked;
+  }
 
-    this.favoriteClicked = !this.favoriteClicked;
+  getGameById(id: number) {
+    this.gamesService.getGamesById(this.gameId).subscribe(data => {
+      this.gameDetails = data;
+      console.log(this.gameDetails.id)
+    })
   }
 }
