@@ -26,7 +26,7 @@ export class CardComponent implements OnInit {
 
   myItem: any;
 
-  favoriteClicked: boolean;
+  favoriteClicked: boolean[] = [];
 
   gameFavorited: any;
 
@@ -35,6 +35,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFavorites();
+    this.fillHeartIfGameIsLiked();
   }
 
   getFavorites() {
@@ -57,6 +58,7 @@ export class CardComponent implements OnInit {
     this.gameId = id;
     this.favorites.push(this.gameFavorited);
     localStorage.setItem(this.key, JSON.stringify(this.favorites));
+    console.log('added to favs');
     this.toggleHeart(this.gameId);
     this.getGameById(this.gameId);
     this.saveFavorites();
@@ -67,21 +69,31 @@ export class CardComponent implements OnInit {
     let gameIndex = this.favorites.findIndex((game: any) => game.id === id);
     if (gameIndex > -1) {
       this.favorites.splice(gameIndex, 1);
-      this.toggleHeart(id);
+      this.toggleHeart(this.gameId);
       this.saveFavorites();
+      console.log('removed')
     }
   }
 
-  toggleHeart(id: number) {
-    // let game = this.favorites.find((game: any) => game.id === id)
-    // console.log(this.gameFavorited.id)
-    // this.favoriteClicked = !this.favoriteClicked;
+  toggleHeart(id: any) {
+    this.favoriteClicked[this.gameId] = !this.favoriteClicked[this.gameId];
+    console.log(this.favoriteClicked[this.gameId])
   }
 
   getGameById(id: number) {
     this.gamesService.getGamesById(this.gameId).subscribe(data => {
       this.gameDetails = data;
-      console.log(this.gameDetails.id)
     })
+  }
+
+  fillHeartIfGameIsLiked() {
+    if (this.favorites) {
+      for (let i = 0; i < this.favorites.length; i++) {
+        let id = this.favorites[i].id;
+        if (id) {
+          this.favoriteClicked[id] = true;
+        }
+      }
+    }
   }
 }

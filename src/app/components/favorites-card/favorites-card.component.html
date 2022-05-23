@@ -1,0 +1,7 @@
+<div class="favorites-card__card"  *ngFor="let game of gameDetails">
+  <div class="favorites-card__image" style="background-image: url({{game.background_image}});"></div>
+  <div class="favorites-card__content">
+    <span class="favorites-card__name">{{game.name}}</span>
+    <span class="favorites-card__released">{{game.released}}</span>
+  </div>
+</div>

@@ -17,6 +17,7 @@ import { NewReleasesComponent } from './components/new-releases/new-releases.com
 import { MoreNewsComponent } from './components/pages/more-news/more-news.component';
 import { YourGamesComponent } from './components/your-games/your-games.component';
 import { FavoritesComponent } from './components/pages/favorites/favorites.component';
+import { FavoritesCardComponent } from './components/favorites-card/favorites-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { FavoritesComponent } from './components/pages/favorites/favorites.compo
     MoreNewsComponent,
     YourGamesComponent,
     FavoritesComponent,
+    FavoritesCardComponent,
   ],
   imports: [
     BrowserModule,

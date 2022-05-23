@@ -17,6 +17,8 @@ export class FavoritesComponent implements OnInit {
 
   gameDetailsArray = new Array();
 
+  favoriteClicked: boolean[] = [];
+
   constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
@@ -42,6 +44,5 @@ export class FavoritesComponent implements OnInit {
 
   createDetails() {
     this.gameDetailsArray.push(this.gameDetails)
-    console.log(this.gameDetailsArray)
   }
 }

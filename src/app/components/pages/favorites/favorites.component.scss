@@ -1,0 +1,12 @@
+@import "src/mixins/settings.scss";
+
+.favorites {
+  margin: 2rem;
+
+  &__card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+  }
+}
