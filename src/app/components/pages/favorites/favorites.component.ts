@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Game } from 'src/app/domain/game';
 import { GamesService } from 'src/app/services/games.service';
 
@@ -23,7 +24,6 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFavoritesList();
-
   }
 
   getFavoritesList() {
@@ -33,7 +33,6 @@ export class FavoritesComponent implements OnInit {
       this.getGameById(this.gameId);
     }
   }
-
 
   getGameById(id: number) {
     this.gamesService.getGamesById(this.gameId).subscribe(data => {

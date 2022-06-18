@@ -35,7 +35,6 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFavorites();
-    this.fillHeartIfGameIsLiked();
   }
 
   getFavorites() {
@@ -43,6 +42,7 @@ export class CardComponent implements OnInit {
       this.favorites = [];
     } else {
       this.favorites = JSON.parse(localStorage.getItem(this.key)!);
+      this.fillHeartIfGameIsLiked();
     }
   }
 
@@ -69,15 +69,14 @@ export class CardComponent implements OnInit {
     let gameIndex = this.favorites.findIndex((game: any) => game.id === id);
     if (gameIndex > -1) {
       this.favorites.splice(gameIndex, 1);
-      this.toggleHeart(this.gameId);
       this.saveFavorites();
-      console.log('removed')
+      this.favoriteClicked[id] = false;
+      console.log('removed', id, this.favoriteClicked[id])
     }
   }
 
   toggleHeart(id: any) {
     this.favoriteClicked[this.gameId] = !this.favoriteClicked[this.gameId];
-    console.log(this.favoriteClicked[this.gameId])
   }
 
   getGameById(id: number) {
@@ -87,13 +86,9 @@ export class CardComponent implements OnInit {
   }
 
   fillHeartIfGameIsLiked() {
-    if (this.favorites) {
-      for (let i = 0; i < this.favorites.length; i++) {
-        let id = this.favorites[i].id;
-        if (id) {
-          this.favoriteClicked[id] = true;
-        }
-      }
+    for (let i = 0; i < this.favorites.length; i++) {
+      let id = this.favorites[i].id;
+      this.favoriteClicked[id] = true;
     }
   }
 }

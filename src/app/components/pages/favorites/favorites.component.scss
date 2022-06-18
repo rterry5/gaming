@@ -3,10 +3,24 @@
 .favorites {
   margin: 2rem;
 
+  &__wrapper {
+    display: flex;
+  }
+
+  &__your-games {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    border-radius: 24px;
+    background-color: $dark;
+    padding: 2rem;
+  }
+
   &__card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 1rem;
+    align-content: flex-start;
   }
 }
